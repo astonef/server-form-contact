@@ -1,7 +1,9 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const nodemailer = require('nodemailer');
+import express from 'express';
+import cors from 'cors';
+import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -14,7 +16,7 @@ app.post('/submit-form', async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'SendGrid',
       auth: {
-        user: 'apikey', // non cambiare
+        user: 'apikey',
         pass: process.env.SENDGRID_API_KEY,
       },
     });
@@ -31,7 +33,6 @@ app.post('/submit-form', async (req, res) => {
         <p><strong>Messaggio:</strong><br>${textarea.replace(/\n/g, '<br>')}</p>
       `,
     });
-    
 
     res.sendStatus(200);
   } catch (err) {
