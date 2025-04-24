@@ -34,7 +34,7 @@ app.post('/submit-form', async (req, res) => {
       `,
     });
 
-    res.sendStatus(200);
+    res.status(200).json({ message: 'Email inviata con successo' });
   } catch (err) {
     console.error('Errore invio:', err);
     res.status(500).send('Errore invio');
