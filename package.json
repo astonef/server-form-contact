@@ -4,13 +4,12 @@
     "main": "contact-to-render.js",
     "type": "module",
     "scripts": {
-      "start": "node contact-to-render.js"
+        "start": "node contact-to-render.js"
     },
     "dependencies": {
-      "cors": "^2.8.5",
-      "dotenv": "^16.3.1",
-      "express": "^4.18.2",
-      "nodemailer": "^6.9.8"
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "sib-api-v3-sdk": "^8.5.0"
     }
-  }
-  
+}
